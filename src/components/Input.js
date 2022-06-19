@@ -14,6 +14,7 @@ export default function Input() {
 			onInput={(e) => dispatch(setInput(e.target.value))}
 			className="border-2 border-black"
 			autoFocus
+			autoComplete="off"
 		></input>
 	);
 }

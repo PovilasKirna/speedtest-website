@@ -20,8 +20,13 @@ export const inputSlice = createSlice({
 				state.errors.index.push(action.payload);
 			}
 		},
+		resetInput: (state) => {
+			state.input = "";
+			state.errors.index = [];
+			state.errors.count = 0;
+		},
 	},
 });
 
-export const { setInput, setErrors } = inputSlice.actions;
+export const { setInput, setErrors, resetInput } = inputSlice.actions;
 export default inputSlice.reducer;

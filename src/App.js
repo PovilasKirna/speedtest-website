@@ -1,4 +1,3 @@
-import "./App.css";
 import Timer from "./components/Timer";
 import Input from "./components/Input";
 import TextBox from "./components/TextBox";
@@ -11,8 +10,7 @@ function App() {
 
 	return (
 		<div className="flex flex-col w-screen h-screen m-0 content-center justify-center items-center">
-			{/* {!gameStarted && !gameEnded && <StartScreen />} */}
-			{!gameStarted && <StartScreen />}
+			{!gameStarted && !gameEnded && <StartScreen />}
 			{gameStarted && !gameEnded && (
 				<>
 					<Timer />
