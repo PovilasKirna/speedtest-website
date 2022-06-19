@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Timer from "./components/Timer";
+import Input from "./components/Input";
+import TextBox from "./components/TextBox";
+import StartScreen from "./components/StartScreen";
+import EndScreen from "./components/EndScreen";
+import { useSelector } from "react-redux";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const { gameStarted, gameEnded } = useSelector((state) => state.gameControl);
+
+	return (
+		<div className="flex flex-col w-screen h-screen m-0 content-center justify-center items-center">
+			{/* {!gameStarted && !gameEnded && <StartScreen />} */}
+			{!gameStarted && <StartScreen />}
+			{gameStarted && !gameEnded && (
+				<>
+					<Timer />
+					<TextBox />
+					<Input />
+				</>
+			)}
+			{gameEnded && <EndScreen />}
+		</div>
+	);
 }
 
 export default App;
