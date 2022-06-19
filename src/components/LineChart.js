@@ -146,7 +146,8 @@ export default function LineChart({
 				borderWidth: 2,
 				order: 1,
 				yAxisID: "error",
-				type: "scatter",
+				type: "line",
+				showLine: false,
 				pointStyle: "crossRot",
 				pointRadius: function (context) {
 					const index = context.dataIndex;
